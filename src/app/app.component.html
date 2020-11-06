@@ -1,0 +1,73 @@
+
+<!-- 
+<app-song-creation></app-song-creation><br><br>
+<app-song-list-form></app-song-list-form> class="movieContainer" -->
+
+
+
+<div >
+    <div aria-level="float-container">
+      <img src="assets/img/download.png">
+    </div>
+  
+    <div class="float-container">
+
+
+    
+      <div class="float-child">
+        <h1>Add Songs</h1>
+      <div class="row">
+        <input type="text" placeholder="song title" [(ngModel)]="songTitle">
+      </div>
+      <div class="row">
+        <input type="text" placeholder="song duration(minutes)" [(ngModel)]="songDuration">
+      </div>
+      
+      <h1>Genre</h1>
+      <div *ngFor="let todo of todos">
+        <input type="checkbox"  [(ngModel)]="todo.done">{{todo.title}}
+      </div>
+       
+  <div class="row">
+    <button (click)="onSave()">save</button>
+  </div>
+      
+    </div>
+    <!-- <div class="column">
+      <table>
+        <tr>
+          <th>SongTitle</th>
+          <th>Duration</th>
+          <th>Genre</th>
+        </tr>
+        <div *ngFor="let comp of complete">
+          <td>{{comp.songTitle}}</td>
+          <td>{{comp.duration}}</td>
+          <td>{{comp.genre}}</td>
+      </div> 
+      </table>
+    </div> -->
+
+
+
+      <div class="float-child" [hidden]="myHide">
+
+      <table border="1">
+          <th>Title</th>
+          <th>Duration</th>
+          <th>Genre</th>
+          <th>Delete</th>
+          <tbody>
+              <tr *ngFor="let comp of complete">
+                <td>{{comp.songTitle}}</td>
+                <td>{{comp.duration}}</td>
+                <td>{{comp.genre}}</td>
+                  <td><img style="cursor: pointer;" (click)="OnDelete(song.id)"  alt="image">Delete</td>
+              </tr>
+          </tbody>
+      </table>
+      </div>
+
+
+  </div>
+  </div>
